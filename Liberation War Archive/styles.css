@@ -1,0 +1,44 @@
+/*.moment1 img {
+    zoom: 150%;
+}*/
+.rectangular {
+    background: url("banner.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+.banner {
+    position: relative;
+}
+.circle {
+    position: absolute;
+    z-index: 1;
+    margin-top: 100px;
+}
+
+.moment img {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.carousel-inner img {
+    height: 300px;
+    object-fit: cover;
+    /* filter: blur(15px);*/
+    filter: brightness(0.4);
+}
+
+/* This makes the zoom smooth */
+.hover-zoom {
+    transition: transform 0.5s ease;
+}
+
+/* This triggers the zoom when you hover over the container */
+.img-container:hover .hover-zoom {
+    transform: scale(1.15); /* 1.15 = 15% zoom */
+}
+
+/* Optional: Ensures the container stays the same size */
+.img-container {
+    overflow: hidden;
+}
