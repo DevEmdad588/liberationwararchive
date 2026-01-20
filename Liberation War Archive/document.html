@@ -225,7 +225,45 @@
 
        <footer class="bg-danger text-white text-center py-3">
             <p class="mb-0">&copy; 2025 Emdad Hossain. All Rights Reserved.</p>
-        </footer>
+         <!-- Live Date & Time -->
+    <p class="mb-0 small">
+      <span id="liveDate"></span> | <span id="liveTime"></span>
+    </p>
+
+  </div>
+</footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script>
+  function updateDateTime() {
+    const now = new Date();
+
+    const dateOptions = { 
+      weekday: 'long', 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    };
+
+    const timeOptions = { 
+      hour: '2-digit', 
+      minute: '2-digit', 
+      second: '2-digit' 
+    };
+
+    const dateString = now.toLocaleDateString(undefined, dateOptions);
+    const timeString = now.toLocaleTimeString(undefined, timeOptions);
+
+    document.getElementById("liveDate").innerText = dateString;
+    document.getElementById("liveTime").innerText = timeString;
+  }
+
+  setInterval(updateDateTime, 1000);
+  updateDateTime();
+</script>
 
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.8/js/bootstrap.bundle.min.js"
@@ -234,3 +272,4 @@
             referrerpolicy="no-referrer"></script>
     </body>
 </html>
+
